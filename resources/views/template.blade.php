@@ -14,16 +14,16 @@
                     <p class="text">Toutes les activités à proximité de chez vous</p>
                 </div>
             </div><!-- end of header -->
-            <h1> {{ $data->title }}</h1>
+            <h1> {{ $data->title }} </h1>
 
             <div class="content">
                 <div class="picture">
-                    <img class="picture-alone" src="{{ $data->url_img }}">
+                    <img class="picture-alone" src=" {{ $data->url_img }} ">
                 </div>
                 <div class="full-description">
                     <div class="description-paragraph">
                         <h2>L'activité</h2>
-                        <p>{{ $data->description }}</p>
+                        <p> {{ $data->description }} </p>
                     </div>
                     <div class="full-table">
                         <table class="big-table">
@@ -37,10 +37,10 @@
                             </thead>
                             <tbody>
                               <tr>
-                                <td>{{ $data->address }}<br></td>
+                                <td> {{ $data->address }} <br></td>
                                 <td> {{ $data->dates }} </td>
-                                <td>{{ $data->hour }}</td>
-                                <td>{{ $data->price }}</td>
+                                <td> {{ $data->hour }} </td>
+                                <td> {{ $data->price }} </td>
                               </tr>
                             </tbody>
                         </table>
@@ -58,8 +58,8 @@
                                         {{ $data->orga_surname }} {{ $data->orga_name }}
                                     </td>
                                     <td>
-                                        E-mail &nbsp; &nbsp; &nbsp; : &nbsp;{{ $data->orga_email }}<br>
-                                                            Téléphone : &nbsp;{{ $data->orga_phone }}
+                                        E-mail &nbsp; &nbsp; &nbsp; : &nbsp;{{ $data->orga_email }} <br>
+                                        Téléphone : &nbsp;{{ $data->orga_phone }}
                                     </td>
                                 </tr>
                             </tbody>
@@ -78,7 +78,7 @@
                 <div class="qr-code">
                     <div class="scan-me"><p class="scan">Scannez moi!</p></div>
                     <div class="qr">
-                        {!! QrCode::size(120)->generate($data->url) !!}
+                        {!! QrCode::size(120)->generate( $data->url ) !!}
                     </div>
                     <div class="share-me">Inscrivez-vous <br>et partagez!
                     </div>
