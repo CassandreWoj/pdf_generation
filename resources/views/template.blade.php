@@ -18,12 +18,12 @@
 
             <div class="content">
                 <div class="picture">
-                    <img class="picture-alone" src="{{$data->url_img}}">
+                    <img class="picture-alone" src="{{ $data->url_img }}">
                 </div>
                 <div class="full-description">
                     <div class="description-paragraph">
                         <h2>L'activité</h2>
-                        <p>{{$data->description}}</p>
+                        <p>{{ $data->description }}</p>
                     </div>
                     <div class="full-table">
                         <table class="big-table">
@@ -37,10 +37,10 @@
                             </thead>
                             <tbody>
                               <tr>
-                                <td>{{$data->address}}<br></td>
-                                <td> {{$data->dates}} </td>
-                                <td>{{$data->hour}}</td>
-                                <td>{{$data->price}}</td>
+                                <td>{{ $data->address }}<br></td>
+                                <td> {{ $data->dates }} </td>
+                                <td>{{ $data->hour }}</td>
+                                <td>{{ $data->price }}</td>
                               </tr>
                             </tbody>
                         </table>
@@ -55,11 +55,11 @@
                             <tbody>
                                 <tr>
                                     <td>
-                                        {{$data->orga_surname}} {{$data->orga_name}}
+                                        {{ $data->orga_surname }} {{ $data->orga_name }}
                                     </td>
                                     <td>
-                                        E-mail &nbsp; &nbsp; &nbsp; : &nbsp;{{$data->orga_email}}<br>
-                                                            Téléphone : &nbsp;{{$data->orga_phone}}
+                                        E-mail &nbsp; &nbsp; &nbsp; : &nbsp;{{ $data->orga_email }}<br>
+                                                            Téléphone : &nbsp;{{ $data->orga_phone }}
                                     </td>
                                 </tr>
                             </tbody>
