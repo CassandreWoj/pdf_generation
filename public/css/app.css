@@ -1,6 +1,25 @@
 
 @page  {
     size: A4;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+.header {
+    background-color: #e97288;
+    height: 150px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    padding-left: 50px;
+    padding-right: 50px;
 }
 body {
     /*padding top & bottom, same size as header and footer height*/
@@ -8,10 +27,6 @@ body {
     padding-top: 150px;
     page-break-after: always; /*aligns footer at bottom of a4 page*/
     margin: 0;
-}
-* {
-    box-sizing: border-box;
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 h1 {
     color: black;
@@ -62,17 +77,6 @@ h3, p {
     flex-direction: column;
     padding-bottom: 10px;
     padding-top: 50px;
-}
-.header {
-    background-color: #e97288;
-    height: 150px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    padding-left: 50px;
-    padding-right: 50px;
 }
 .text-activity {
     display: flex;
