@@ -178,7 +178,7 @@
                     <h1> {{ $title }} </h1>
                 </tr>
                 <tr class="picture">
-                    <img class="picture-alone" src="{{ $url_img }}">
+                    <img class="picture-alone" src="{{ storage_path('app/public/' . $name) }}">
                 </tr>
                 <tr class="description-paragraph">
                     <h2 class="desc_title">L'activité</h2>
@@ -224,61 +224,8 @@
                         </tbody>
                     </table>
                 </tr>
-
             </table>
 
-
-            <!-- <div class="content">
-                <div class="picture">
-                    <img class="picture-alone" src="{{ $url_img }}">
-                </div>
-                <div class="full-description">
-                    <div class="description-paragraph">
-                        <h2>L'activité</h2>
-                        <p> {{ $description}} </p>
-                    </div>
-                    <div class="full-table">
-                        <table class="big-table">
-                            <thead>
-                              <tr>
-                                <th>Point de rendez-vous</th>
-                                <th>Date(s)</th>
-                                <th>Heure</th>
-                                <th>Prix</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr>
-                                <td> {{ $address }} <br></td>
-                                <td> {{ $dates }} </td>
-                                <td> {{ $hour }} </td>
-                                <td> {{ $price }} </td>
-                              </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="organisateur">
-                        <table class="orga-table">
-                            <thead>
-                                <tr>
-                                    <th>Organisateur de l'activité</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        {{ $orga_surname }} {{ $orga_name }}
-                                    </td>
-                                    <td>
-                                        E-mail &nbsp; &nbsp; &nbsp; : &nbsp;{{ $orga_email }} <br>
-                                        Téléphone : &nbsp;{{ $orga_phone }}
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div> -->
             <div class="footer">
                 <table class="footer-table">
                     <tr>

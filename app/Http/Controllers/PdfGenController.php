@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use PDF;
 use BaconQrCode;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
+use Illuminate\Support\Facades\Storage;
 
 class PdfGenController extends Controller
 {
@@ -25,12 +26,16 @@ class PdfGenController extends Controller
 
         //{!! QrCode::size(120)->generate( $url ) !!}
         //$qr = QrCode::size(120)->generate($url, public_path('img/qr_codes/qr.png'));
-
+        $content = file_get_contents($url_img);
+        $exploded_url = explode("/", $url_img);
+        $name = $exploded_url[count($exploded_url) - 1];
+        Storage::disk('public')->put($name, $content);
 
         $pdf = PDF::loadView('template', [
                 'url'=>$url,
                 'title'=>$title,
                 'url_img'=>$url_img,
+                'name'=>$name,
                 'description'=>$description,
                 'address'=>$address,
                 'dates'=>$dates,
