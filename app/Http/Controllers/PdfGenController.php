@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use PDF;
+use BaconQrCode;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class PdfGenController extends Controller

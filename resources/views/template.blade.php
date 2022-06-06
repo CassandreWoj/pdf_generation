@@ -88,7 +88,7 @@
                 height: 80px;
             }
             .logo-footer {
-                height: 100px;
+                height: 90px;
             }
             .footer {
                 background-color: #e97288;
@@ -102,32 +102,41 @@
                 padding-right: 30px;
                 margin: 0;
             }
+            .footer-table {
+                width: 90%;
+                vertical-align: middle !important;
+            }
             .logo-bottom {
                 margin-left: 10px;
+                vertical-align: middle !important;
+                text-align: left;
             }
             .site-url {
-                justify-content: center;
+                /*text-align: center;*/
+                text-align: right;
+                vertical-align: middle !important;
             }
             .url {
                 font-weight: bold;
+                /*text-align: center;*/
             }
             .qr-code {
-                margin-right: 30px;
+                margin-right: 10px;
+                vertical-align: middle !important;
+                text-align: right;
             }
             .qr-image {
                 width: 120px;
                 height: 120px;
-                align-items: start;
             }
             .share-me {
-                justify-content: center;
-                align-items: center;
+                vertical-align: middle !important;
             }
             .scan-me {
-                justify-content: center;
-                align-items: center;
+                vertical-align: middle !important;
             }
             .qr {
+                vertical-align: middle !important;
             }
             .big-table, .orga-table {
                 width: 100%;
@@ -210,33 +219,29 @@
                 </div>
             </div>
             <div class="footer">
-                <!--
-                <div class="logo-bottom">
-                    <img class="logo-footer" src="img/logo-vertical-PJU.png">
-                </div>
-                <div class="site-url">
-                    <p class="url">www.plizjoinus.com</p>
-                </div>
-
-                <div class="qr-code">
-                    <div class="scan-me"><p class="scan">Scannez moi!</p></div>
-                    <div class="qr">
-
-                    </div>
-                    <div class="share-me">Inscrivez-vous <br>et partagez!
-                    </div>
-                 </div>-->
-                <table>
+                <table class="footer-table">
                     <tr>
-                        <th>
+                        <th class="logo-bottom">
                             <img class="logo-footer" src="img/logo-vertical-PJU.png">
                         </th>
-                        <th>
+                        <th class="site-url">
                             <p class="url">www.plizjoinus.com</p>
                         </th>
-                        <th>
-                            {!! QrCode::size(120)->generate( $url ) !!}
+                        <!-- TODO : find a way to generate QR code & print it
+                        <th class="qr-code">
+                            <table>
+                                <th class="scan-me">
+                                    <p class="scan">Scannez moi!</p>
+                                </th>
+                                <th class="qr">
+                                    {!! QrCode::size(80)->generate( $url ) !!}
+                                </th>
+                                <th class="share-me">
+                                    Inscrivez-vous <br>et partagez!
+                                </th>
+                            </table>
                         </th>
+                        -->
                     </tr>
                 </table>
 
