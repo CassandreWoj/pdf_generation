@@ -40,38 +40,46 @@
                 font-weight: bold;
                 font-size: medium;
             }
-            .description-paragraph {
-                padding-bottom: 50px;
+            .content {
+                margin-right: 100px;
+                margin-left: 100px;
+            }
+            .title {
+                vertical-align: middle !important;
+                text-align: center;
+                padding-top: 40px;
+                padding-bottom: 30px;
+                margin: 0;
+            }
+            .picture {
+                vertical-align: middle !important;
+                text-align: center;
+                max-width: 1420px;
+                max-height: 400px;
             }
             .picture-alone {
                 max-height: 300px;
                 max-width: 1420px;
             }
-            .content {
-                margin-right: 100px;
-                margin-left: 100px;
+            .description-paragraph {
+                padding-top: 50px;
             }
-            .picture {
-                align-content: center;
-                justify-content: center;
-                max-width: 1420px;
-                max-height: 400px;
+            .desc_title {
+                padding-top: 30px;
             }
-            .full-description {
-                padding-bottom: 10px;
-                padding-top: 20px;
+            .desc_par {
+                padding-bottom: 40px;
             }
+
             .header {
                 background-color: #e97288;
                 height: 100px;
                 width: 100%;
-                align-items: center;
                 position: fixed;
                 top: 0;
                 padding-left: 30px;
                 padding-right: 30px;
             }
-
             .header-table {
                 width: 90%;
                 vertical-align: middle !important;
@@ -94,8 +102,6 @@
                 background-color: #e97288;
                 height: 100px;
                 width: 100%;
-                display: flex;
-                align-items: center;
                 position: fixed;
                 bottom: 0;
                 padding-left: 30px;
@@ -107,7 +113,7 @@
                 vertical-align: middle !important;
             }
             .logo-bottom {
-                margin-left: 10px;
+                /*margin-left: 10px;*/
                 vertical-align: middle !important;
                 text-align: left;
             }
@@ -141,12 +147,14 @@
             .big-table, .orga-table {
                 width: 100%;
                 text-align: left;
-                padding-bottom: 50px;
+                padding-bottom: 40px;
             }
             td, th {
                 height: 30px;
                 vertical-align: top;
+                text-align: left;
                 min-width: available;
+                max-width: 250px;
             }
         </style>
     </head>
@@ -165,9 +173,62 @@
                     </tr>
                 </table>
             </div><!-- end of header -->
-            <h1> {{ $title }} </h1>
+            <table class="content">
+                <tr class="title">
+                    <h1> {{ $title }} </h1>
+                </tr>
+                <tr class="picture">
+                    <img class="picture-alone" src="{{ $url_img }}">
+                </tr>
+                <tr class="description-paragraph">
+                    <h2 class="desc_title">L'activité</h2>
+                    <p class="desc_par"> {{ $description}} </p>
+                </tr>
+                <tr class="full-table">
+                    <table class="big-table">
+                        <thead>
+                            <tr>
+                                <th>Point de rendez-vous</th>
+                                <th>Date(s)</th>
+                                <th>Heure</th>
+                                <th>Prix</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td> {{ $address }} <br></td>
+                                <td> {{ $dates }} </td>
+                                <td> {{ $hour }} </td>
+                                <td> {{ $price }} </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </tr>
+                <tr class="organisateur">
+                    <table class="orga-table">
+                        <thead>
+                        <tr>
+                            <th>Organisateur de l'activité</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>
+                                {{ $orga_surname }} {{ $orga_name }}
+                            </td>
+                            <td>
+                                E-mail &nbsp; &nbsp; &nbsp; : &nbsp;{{ $orga_email }} <br>
+                                Téléphone : &nbsp;{{ $orga_phone }}
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </tr>
 
-            <div class="content">
+            </table>
+
+
+            <!-- <div class="content">
                 <div class="picture">
                     <img class="picture-alone" src="{{ $url_img }}">
                 </div>
@@ -217,7 +278,7 @@
                         </table>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <div class="footer">
                 <table class="footer-table">
                     <tr>
