@@ -31,12 +31,14 @@ class PdfGenController extends Controller
         $name = $exploded_url[count($exploded_url) - 1];
         Storage::disk('public')->put($name, $content);
 
+        $exploded_desc = explode("\"", $description);
+
         $pdf = PDF::loadView('template', [
                 'url'=>$url,
                 'title'=>$title,
                 'url_img'=>$url_img,
                 'name'=>$name,
-                'description'=>$description,
+                'description'=>$exploded_desc[1],
                 'address'=>$address,
                 'dates'=>$dates,
                 'hour'=>$hour,

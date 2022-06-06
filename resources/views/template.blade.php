@@ -63,12 +63,16 @@
             }
             .description-paragraph {
                 padding-top: 50px;
+                max-width: 500px;
+                word-wrap: break-word;
             }
             .desc_title {
                 padding-top: 30px;
             }
             .desc_par {
                 padding-bottom: 40px;
+                max-width: 600px;
+                word-wrap: break-word;
             }
 
             .header {
