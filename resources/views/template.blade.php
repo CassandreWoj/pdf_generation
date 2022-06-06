@@ -161,7 +161,7 @@
         <div class="wrapper">
             <div class="header">
                 <div class="full-logo">
-                    <img class="logo" src="https://plizjoinus.com/wp-content/uploads/2022/03/Logo-lineaire.png">
+                    <img class="logo" src="img/logo-lineaire-PJU.png">
                 </div>
                 <div class="text-activity">
                     <p class="text">Toutes les activités à proximité de chez vous</p>
@@ -222,7 +222,7 @@
             </div>
             <div class="footer">
                 <div class="logo-bottom">
-                    <img class="logo-footer" src="https://plizjoinus.com/wp-content/uploads/2022/03/Logo-plizjoinus-pdf@2x.png">
+                    <img class="logo-footer" src="img/logo-vertical-PJU.png">
                 </div>
                 <div class="site-url">
                     <p class="url">www.plizjoinus.com</p>
