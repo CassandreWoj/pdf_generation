@@ -48,23 +48,16 @@
                 max-width: 1420px;
             }
             .content {
-                display: flex;
-                flex-direction: column;
                 margin-right: 100px;
                 margin-left: 100px;
             }
             .picture {
-                display: flex;
                 align-content: center;
                 justify-content: center;
-                flex-grow: 1;
                 max-width: 1420px;
                 max-height: 400px;
             }
             .full-description {
-                display: flex;
-                flex-grow: 1;
-                flex-direction: column;
                 padding-bottom: 10px;
                 padding-top: 20px;
             }
@@ -72,22 +65,24 @@
                 background-color: #e97288;
                 height: 100px;
                 width: 100%;
-                display: flex;
                 align-items: center;
                 position: fixed;
                 top: 0;
                 padding-left: 30px;
                 padding-right: 30px;
             }
+
+            .header-table {
+                width: 90%;
+                vertical-align: middle !important;
+            }
             .text-activity {
-                display: flex;
-                margin-right: 30px;
                 font-weight: bold;
+                text-align: right;
+                vertical-align: middle !important;
             }
             .full-logo {
-                display: flex;
-                flex-grow: 1;
-                margin-left: 10px;
+                vertical-align: middle !important;
             }
             .logo {
                 height: 80px;
@@ -108,19 +103,15 @@
                 margin: 0;
             }
             .logo-bottom {
-                display: flex;
                 margin-left: 10px;
             }
             .site-url {
-                display: flex;
-                flex-grow: 1;
                 justify-content: center;
             }
             .url {
                 font-weight: bold;
             }
             .qr-code {
-                display: flex;
                 margin-right: 30px;
             }
             .qr-image {
@@ -129,20 +120,14 @@
                 align-items: start;
             }
             .share-me {
-                display: flex;
-                flex-grow: 1;
                 justify-content: center;
                 align-items: center;
             }
             .scan-me {
-                display: flex;
-                flex-grow: 1;
                 justify-content: center;
                 align-items: center;
             }
             .qr {
-                display: flex;
-                flex-grow: 1;
             }
             .big-table, .orga-table {
                 width: 100%;
@@ -160,12 +145,16 @@
     <div class="main">
         <div class="wrapper">
             <div class="header">
-                <div class="full-logo">
-                    <img class="logo" src="img/logo-lineaire-PJU.png">
-                </div>
-                <div class="text-activity">
-                    <p class="text">Toutes les activités à proximité de chez vous</p>
-                </div>
+                <table class="header-table">
+                    <tr>
+                        <th class="full-logo">
+                            <img class="logo" src="img/logo-lineaire-PJU.png">
+                        </th>
+                        <th class="text-activity">
+                            <p class="text">Toutes les activités à proximité de chez vous</p>
+                        </th>
+                    </tr>
+                </table>
             </div><!-- end of header -->
             <h1> {{ $title }} </h1>
 
@@ -221,6 +210,7 @@
                 </div>
             </div>
             <div class="footer">
+                <!--
                 <div class="logo-bottom">
                     <img class="logo-footer" src="img/logo-vertical-PJU.png">
                 </div>
@@ -231,11 +221,24 @@
                 <div class="qr-code">
                     <div class="scan-me"><p class="scan">Scannez moi!</p></div>
                     <div class="qr">
-                        {!! QrCode::size(120)->generate( $url ) !!}
+
                     </div>
                     <div class="share-me">Inscrivez-vous <br>et partagez!
                     </div>
-                 </div>
+                 </div>-->
+                <table>
+                    <tr>
+                        <th>
+                            <img class="logo-footer" src="img/logo-vertical-PJU.png">
+                        </th>
+                        <th>
+                            <p class="url">www.plizjoinus.com</p>
+                        </th>
+                        <th>
+                            {!! QrCode::size(120)->generate( $url ) !!}
+                        </th>
+                    </tr>
+                </table>
 
             </div>
         </div>

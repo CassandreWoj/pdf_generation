@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\View\View;
 use PDF;
-use App\Models\PdfDetail;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class PdfGenController extends Controller
 {
@@ -23,6 +22,10 @@ class PdfGenController extends Controller
         $orga_email = $request->input('orga_email');
         $orga_phone = $request->input('orga_phone');
 
+        //{!! QrCode::size(120)->generate( $url ) !!}
+        //$qr = QrCode::size(120)->generate($url, public_path('img/qr_codes/qr.png'));
+
+
         $pdf = PDF::loadView('template', [
                 'url'=>$url,
                 'title'=>$title,
@@ -37,24 +40,8 @@ class PdfGenController extends Controller
                 'orga_name'=>$orga_name,
                 'orga_surname'=>$orga_surname
             ]);
+
         return $pdf->download('activity-'.$title.'.pdf');
-        return view('template')->with([
-            'url'=>$url,
-            'title'=>$title,
-            'url_img'=>$url_img,
-            'description'=>$description,
-            'address'=>$address,
-            'dates'=>$dates,
-            'hour'=>$hour,
-            'price'=>$price,
-            'orga_phone'=>$orga_phone,
-            'orga_email'=>$orga_email,
-            'orga_name'=>$orga_name,
-            'orga_surname'=>$orga_surname
-        ]);
-
-        //return $pdf->download('activity-'.$title.'.pdf');
-
     }
 
 }
