@@ -25,7 +25,7 @@ class PdfGenController extends Controller
         $orga_phone = $request->input('orga_phone');
 
         //{!! QrCode::size(120)->generate( $url ) !!}
-        //$qr = QrCode::size(120)->generate($url, public_path('img/qr_codes/qr.png'));
+        QrCode::size(90)->generate($url, public_path('img/qr_codes/qr.png'));
         $content = file_get_contents($url_img);
         $exploded_url = explode("/", $url_img);
         $name = $exploded_url[count($exploded_url) - 1];

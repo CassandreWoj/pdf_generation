@@ -110,7 +110,7 @@
                 width: 100%;
                 position: fixed;
                 bottom: 0;
-                padding-left: 30px;
+                padding-left: 40px;
                 padding-right: 30px;
                 margin: 0;
             }
@@ -133,22 +133,24 @@
                 /*text-align: center;*/
             }
             .qr-code {
-                margin-right: 10px;
                 vertical-align: middle !important;
-                text-align: right;
+                text-align: right !important;
+                padding-left: 310px;
             }
             .qr-image {
-                width: 120px;
-                height: 120px;
+                width: 90px;
+                height: 90px;
             }
             .share-me {
                 vertical-align: middle !important;
             }
             .scan-me {
                 vertical-align: middle !important;
+                text-align: left !important;
             }
             .qr {
                 vertical-align: middle !important;
+                text-align: center !important;
             }
             .big-table {
                 width: 100%;
@@ -163,6 +165,7 @@
                 bottom: 200px;
                 left: 100px;
                 padding-right: 50px;
+                line-height: 25px;
             }
             td, th {
                 height: 30px;
@@ -185,6 +188,7 @@
                         </th>
                         <th class="text-activity">
                             <p class="text">Toutes les activités à proximité de chez vous !</p>
+                            <p class="text" style="text-align: center; line-height: 25px;">www.plizjoinus.com</p>
                         </th>
                     </tr>
                 </table>
@@ -280,24 +284,21 @@
                         <th class="logo-bottom">
                             <img class="logo-footer" src="img/logo-vertical-PJU.png">
                         </th>
-                        <th class="site-url">
-                            <p class="url">www.plizjoinus.com</p>
-                        </th>
-                        <!-- TODO : find a way to generate QR code & print it
+
                         <th class="qr-code">
-                            <table>
+                            <table style="text-align: right;">
                                 <th class="scan-me">
                                     <p class="scan">Scannez moi!</p>
                                 </th>
                                 <th class="qr">
-                                    {!! QrCode::size(80)->generate( $url ) !!}
+                                    <img class="qr-image" src="img/qr_codes/qr.png">
                                 </th>
                                 <th class="share-me">
                                     Inscrivez-vous <br>et partagez!
                                 </th>
                             </table>
                         </th>
-                        -->
+                        
                     </tr>
                 </table>
 
