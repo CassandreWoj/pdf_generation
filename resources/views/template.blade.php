@@ -204,7 +204,10 @@
                             <tr>
                                 <td>
                                     @foreach($address as $part_addr)
-                                    {{ $part_addr }} <br>
+                                    {{ $part_addr }}
+                                        @if($part_addr != $address[count($address) - 1])
+                                            <br>
+                                        @endif
                                     @endforeach
                                 </td>
                                 <td>
@@ -219,8 +222,22 @@
                                         @endforeach
                                     @endif
                                 </td>
-                                <td> {{ $hour }} </td>
-                                <td> {{ $price }} </td>
+                                <td>
+                                    @for($i = 0; $i < $nb_dates; $i++)
+                                        {{ $hour }}
+                                        @if($i != $nb_dates - 1)
+                                            <br>
+                                        @endif
+                                    @endfor
+                                </td>
+                                <td>
+                                    @for($i = 0; $i < $nb_dates; $i++)
+                                        {{ $price }}
+                                        @if($i != $nb_dates - 1)
+                                            <br>
+                                        @endif
+                                    @endfor
+                                </td>
                             </tr>
                         </tbody>
                     </table>
