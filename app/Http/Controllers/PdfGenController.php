@@ -31,15 +31,22 @@ class PdfGenController extends Controller
         $name = $exploded_url[count($exploded_url) - 1];
         Storage::disk('public')->put($name, $content);
 
-        $exploded_desc = explode("\"", $description);
+        $exploded_address = explode(",", $address);
+        $dates_len = 1;
+        // 3 char is for "N/A" and there is a , -> multiple dates in the string
+        if (strlen($dates) > 3 && str_contains($dates, ", ")) {
+            $dates = explode(", ", $dates);
+            $dates_len = count($dates);
+        }
 
         $pdf = PDF::loadView('template', [
                 'url'=>$url,
                 'title'=>$title,
                 'url_img'=>$url_img,
                 'name'=>$name,
-                'description'=>$exploded_desc[1],
-                'address'=>$address,
+                'description'=>$description,
+                'address'=>$exploded_address, // this is an array
+                'nb_dates' => $dates_len,
                 'dates'=>$dates,
                 'hour'=>$hour,
                 'price'=>$price,

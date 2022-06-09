@@ -73,6 +73,8 @@
                 padding-bottom: 40px;
                 max-width: 600px;
                 word-wrap: break-word;
+                text-align: justify;
+                text-justify: inter-word;
             }
 
             .header {
@@ -172,7 +174,7 @@
                             <img class="logo" src="img/logo-lineaire-PJU.png">
                         </th>
                         <th class="text-activity">
-                            <p class="text">Toutes les activités à proximité de chez vous</p>
+                            <p class="text">Toutes les activités à proximité de chez vous !</p>
                         </th>
                     </tr>
                 </table>
@@ -200,8 +202,23 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td> {{ $address }} <br></td>
-                                <td> {{ $dates }} </td>
+                                <td>
+                                    @foreach($address as $part_addr)
+                                    {{ $part_addr }} <br>
+                                    @endforeach
+                                </td>
+                                <td>
+                                    @if($nb_dates == 1)
+                                        {{ $dates }}
+                                    @else
+                                        @foreach($dates as $date)
+                                            {{ $date }}
+                                            @if($date != $dates[$nb_dates - 1])
+                                                <br>
+                                            @endif
+                                        @endforeach
+                                    @endif
+                                </td>
                                 <td> {{ $hour }} </td>
                                 <td> {{ $price }} </td>
                             </tr>
