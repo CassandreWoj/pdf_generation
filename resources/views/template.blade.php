@@ -47,8 +47,8 @@
             .title {
                 vertical-align: middle !important;
                 text-align: center;
-                padding-top: 40px;
-                padding-bottom: 30px;
+                padding-top: 30px;
+                padding-bottom: 20px;
                 margin: 0;
             }
             .picture {
