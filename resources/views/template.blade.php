@@ -150,10 +150,19 @@
             .qr {
                 vertical-align: middle !important;
             }
-            .big-table, .orga-table {
+            .big-table {
+                width: 100%;
+                /*text-align: left;*/
+                padding-bottom: 40px;
+            }
+            .orga-table {
                 width: 100%;
                 text-align: left;
                 padding-bottom: 40px;
+                position: fixed;
+                bottom: 200px;
+                left: 100px;
+                padding-right: 50px;
             }
             td, th {
                 height: 30px;
@@ -162,6 +171,7 @@
                 min-width: available;
                 max-width: 250px;
             }
+
         </style>
     </head>
     <body>
