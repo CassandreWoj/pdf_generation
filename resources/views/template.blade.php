@@ -135,7 +135,7 @@
             .qr-code {
                 vertical-align: middle !important;
                 text-align: right !important;
-                padding-left: 310px;
+                padding-left: 290px;
             }
             .qr-image {
                 width: 90px;
@@ -151,6 +151,8 @@
             .qr {
                 vertical-align: middle !important;
                 text-align: center !important;
+                padding-right: 10px;
+                padding-left: 10px;
             }
             .big-table {
                 width: 100%;
