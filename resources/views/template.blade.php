@@ -290,13 +290,13 @@
                         <th class="qr-code">
                             <table style="text-align: right;">
                                 <th class="scan-me">
-                                    <p class="scan">Scannez moi!</p>
+                                    <p class="scan">Scannez moi !</p>
                                 </th>
                                 <th class="qr">
                                     <img class="qr-image" src="img/qr_codes/qr.png">
                                 </th>
                                 <th class="share-me">
-                                    Inscrivez-vous <br>et partagez!
+                                    Inscrivez-vous <br>et partagez !
                                 </th>
                             </table>
                         </th>
