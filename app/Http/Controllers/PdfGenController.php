@@ -39,12 +39,14 @@ class PdfGenController extends Controller
             $dates_len = count($dates);
         }
 
+        $exploded_desc = explode("/", $description);
+
         $pdf = PDF::loadView('template', [
                 'url'=>$url,
                 'title'=>$title,
                 'url_img'=>$url_img,
                 'name'=>$name,
-                'description'=>$description,
+                'description'=>$exploded_desc,
                 'address'=>$exploded_address, // this is an array
                 'nb_dates' => $dates_len,
                 'dates'=>$dates,

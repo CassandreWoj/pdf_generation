@@ -43,6 +43,8 @@
             .content {
                 margin-right: 100px;
                 margin-left: 100px;
+                table-layout: fixed;
+                width: 75%;
             }
             .title {
                 vertical-align: middle !important;
@@ -76,7 +78,6 @@
                 text-align: justify;
                 text-justify: inter-word;
             }
-
             .header {
                 background-color: #e97288;
                 height: 100px;
@@ -160,14 +161,14 @@
                 padding-bottom: 40px;
             }
             .orga-table {
-                width: 100%;
                 text-align: left;
                 padding-bottom: 40px;
                 position: fixed;
                 bottom: 200px;
                 left: 100px;
-                padding-right: 50px;
                 line-height: 25px;
+                table-layout: auto;
+                width: 630px;
             }
             td, th {
                 height: 30px;
@@ -204,7 +205,14 @@
                 </tr>
                 <tr class="description-paragraph">
                     <h2 class="desc_title">L'activité</h2>
-                    <p class="desc_par"> {{ $description}} </p>
+                    <p class="desc_par">
+                    @foreach($description as $part_desc)
+                         {{ $part_desc }}
+                        @if($part_desc != $description[count($description) - 1])
+                            <br>
+                        @endif
+                    @endforeach
+                    </p>
                 </tr>
                 <tr class="full-table">
                     <table class="big-table">
