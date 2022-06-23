@@ -266,6 +266,7 @@
                         </tbody>
                     </table>
                 </tr>
+                @if($offer!="N/A")
                 <tr>
                     <table class="big-table">
                         <thead>
@@ -282,6 +283,7 @@
                         </tbody>
                     </table>
                 </tr>
+                @endif
                 <tr class="organisateur">
                     <table class="orga-table">
                         <thead>
