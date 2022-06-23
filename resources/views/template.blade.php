@@ -256,13 +256,29 @@
                                 </td>
                                 <td>
                                     @for($i = 0; $i < $nb_dates; $i++)
-                                        {{ $price }}
+                                        {{ $price }} CHF
                                         @if($i != $nb_dates - 1)
                                             <br>
                                         @endif
                                     @endfor
                                 </td>
                             </tr>
+                        </tbody>
+                    </table>
+                </tr>
+                <tr>
+                    <table class="big-table">
+                        <thead>
+                        <tr>
+                            <th>Offre réservée aux membres PlizJoinUs</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>
+                                {{ $offer }}
+                            </td>
+                        </tr>
                         </tbody>
                     </table>
                 </tr>

@@ -23,8 +23,8 @@ class PdfGenController extends Controller
         $orga_name = $request->input('orga_name');
         $orga_email = $request->input('orga_email');
         $orga_phone = $request->input('orga_phone');
+        $offer = $request->input('offer');
 
-        //{!! QrCode::size(120)->generate( $url ) !!}
         QrCode::size(90)->generate($url, public_path('img/qr_codes/qr.png'));
         $content = file_get_contents($url_img);
         $exploded_url = explode("/", $url_img);
@@ -55,7 +55,8 @@ class PdfGenController extends Controller
                 'orga_phone'=>$orga_phone,
                 'orga_email'=>$orga_email,
                 'orga_name'=>$orga_name,
-                'orga_surname'=>$orga_surname
+                'orga_surname'=>$orga_surname,
+                'offer'=>$offer,
             ]);
 
         return $pdf->download('activity-'.$title.'.pdf');
