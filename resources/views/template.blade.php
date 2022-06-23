@@ -22,8 +22,8 @@
                 color: black;
                 font-size: 30px;
                 text-align: center;
-                padding-top: 40px;
-                padding-bottom: 30px;
+                padding-top: 10px;
+                padding-bottom: 20px;
                 margin: 0;
             }
             h2 {
@@ -49,7 +49,7 @@
             .title {
                 vertical-align: middle !important;
                 text-align: center;
-                padding-top: 30px;
+                padding-top: 10px;
                 padding-bottom: 20px;
                 margin: 0;
             }
@@ -57,10 +57,10 @@
                 vertical-align: middle !important;
                 text-align: center;
                 max-width: 1420px;
-                max-height: 400px;
+                max-height: 240px;
             }
             .picture-alone {
-                max-height: 300px;
+                max-height: 240px;
                 max-width: 1420px;
             }
             .description-paragraph {
@@ -72,7 +72,7 @@
                 padding-top: 30px;
             }
             .desc_par {
-                padding-bottom: 40px;
+                padding-bottom: 20px;
                 max-width: 600px;
                 word-wrap: break-word;
                 text-align: justify;
@@ -158,13 +158,13 @@
             .big-table {
                 width: 100%;
                 /*text-align: left;*/
-                padding-bottom: 40px;
+                padding-bottom: 20px;
             }
             .orga-table {
                 text-align: left;
                 padding-bottom: 40px;
                 position: fixed;
-                bottom: 200px;
+                bottom: 230px;
                 left: 100px;
                 line-height: 25px;
                 table-layout: auto;
@@ -192,6 +192,7 @@
                         <th class="text-activity">
                             <p class="text">Toutes les activités à proximité de chez vous !</p>
                             <p class="text" style="text-align: center; line-height: 25px;">www.plizjoinus.com</p>
+                            <p class="text" style="font-size: xx-small !important; text-align: center; padding-top: 5px;">Réf: CWfckDR</p>
                         </th>
                     </tr>
                 </table>
@@ -221,6 +222,7 @@
                                 <th>Point de rendez-vous</th>
                                 <th>Date(s)</th>
                                 <th>Heure</th>
+                                <th>Durée</th>
                                 <th>Prix</th>
                             </tr>
                         </thead>
@@ -249,6 +251,14 @@
                                 <td>
                                     @for($i = 0; $i < $nb_dates; $i++)
                                         {{ $hour }}
+                                        @if($i != $nb_dates - 1)
+                                            <br>
+                                        @endif
+                                    @endfor
+                                </td>
+                                <td>
+                                    @for($i = 0; $i < $nb_dates; $i++)
+                                        {{ $time }}
                                         @if($i != $nb_dates - 1)
                                             <br>
                                         @endif
